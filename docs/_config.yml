@@ -1,0 +1,11 @@
+title: Using etcd-io/raft library
+url: "https://zvold.github.io"
+baseurl: "/using-etcd-io-raft"
+
+theme: jekyll-theme-primer
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-octicons
+
+markdown: GFM
