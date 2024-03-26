@@ -20,3 +20,5 @@ The single-node cluster is expected to go through the following stages:
  ```bash
  go test -v ./01-single-node-cluster
  ```
+
+Next: [02-single-node-proposals](02-single-node-proposals).

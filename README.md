@@ -1,4 +1,4 @@
-# Incrementally building a program that uses [`etcd-io/raft`](https://github.com/etcd-io/raft) library.
+# Incrementally building a program that uses [`etcd-io/raft`](https://github.com/etcd-io/raft) library
 
 > [!NOTE]
 > Work in progress, current status: step 2 out of approx. 12 steps.

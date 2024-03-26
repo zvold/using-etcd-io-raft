@@ -15,3 +15,16 @@ The test at [`02-single-node-proposals/the_test.go`](https://github.com/zvold/us
   - Proposes a few "command" entries, and wait for each of them to be committed (appear in `rd.CommittedEntries`).
     Each committed "command" carries a single byte, which is collected by the FSM in a list.
   - Verifies that in the end, all proposed "commands" get committed.
+
+ The code can be run with:
+ ```bash
+ mkdir -p /tmp/01 && cd /tmp/01
+ go mod init tmp
+ go get  -t github.com/zvold/using-etcd-io-raft/src/02-single-node-proposals@latest
+ go test -v github.com/zvold/using-etcd-io-raft/src/02-single-node-proposals
+ ```
+
+ Or, if this repository is cloned locally, directly from the `src` directory:
+ ```bash
+ go test -v ./02-single-node-proposals
+ ```
