@@ -151,3 +151,5 @@ So `MemoryStorage::Apply()` has to handle all of these possible cases:
 Overwrites the snapshot stored in a `MemoryStorage`, and replaces its entries with a single dummy entry, making the storage effectively empty.
 
 However, if the `Snapshot`'s index (this is the index of log entry up until which the log was compacted) is less than the index of the `Snapshot` already stored in the `MemoryStorage` (in other words, the passed snapshot is old), then `Append()` call is a no-op.
+
+Next: [04-detour-node-refactor](04-detour-node-refactor).
