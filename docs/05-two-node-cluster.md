@@ -9,3 +9,5 @@ The test at [`05-two-node-cluster/the_test.go`](https://github.com/zvold/using-e
 - Waits for the second node to receive the same committed log entries from the first node.
 
 To make this work, the "state machine handling" loop needs to be updated to pass messages between the nodes.
+
+Next: [06-two-node-snapshot](06-two-node-snapshot).
