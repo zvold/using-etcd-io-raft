@@ -12,7 +12,7 @@ Second, we also make the cluster behaviour more realistic, in two ways:
 > 
 > When creating a snapshot, it's important to store the FSM state (and compact the log) only up to an already *committed* entry. The node making the snapshot might have more entries available in the log, but cannot safely snapshot at an index beyond what is known (to this node) to be committed.
 
-At this step it becomes important to apply the `Snapshot` and `Entries` from the `Ready()` channel in the correct order (see the note in [01-single-node-cluster](01-single-node-cluster)). The nodes might receive a `Ready` struct with both `Snapshot` and `Entries` populated, so we have to apply the `Snapshot` first (see [03-detour-memory-storage](03-detour-memory-storage#`Append()`) for more details about the "gap"):
+At this step it becomes important to apply the `Snapshot` and `Entries` from the `Ready()` channel in the correct order (see the note in [01-single-node-cluster](01-single-node-cluster)). The nodes might receive a `Ready` struct with both `Snapshot` and `Entries` populated, so we have to apply the `Snapshot` first (see [03-detour-memory-storage](03-detour-memory-storage#codeappendcode) for more details about the "gap"):
 ``` go
 // Apply snapshot first or appending the entries might fail because of the "gap":
 // panic: missing log entry [last: 0, append at: 92]:

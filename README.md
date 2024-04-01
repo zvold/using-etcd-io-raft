@@ -3,7 +3,7 @@
 > [!NOTE]
 > Work in progress, current status: step 7 out of approx. 12 steps.
 
-The intended way of reading this is at https://zvold.github.io/using-etcd-ui-raft/.
+The intended way of reading this is at https://zvold.github.io/using-etcd-io-raft/.
 
 Alternatively, browse the repository directly:
 - [docs/](docs/): Source for the GitHub Pages website.
