@@ -1,7 +1,7 @@
 # Incrementally building a program that uses [`etcd-io/raft`](https://github.com/etcd-io/raft) library
 
 > [!NOTE]
-> Work in progress, current status: step 6 out of approx. 12 steps.
+> Work in progress, current status: step 7 out of approx. 12 steps.
 
 The intended way of reading this is at https://zvold.github.io/using-etcd-ui-raft/.
 

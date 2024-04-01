@@ -7,3 +7,5 @@ This requires implementing the remaining steps of the "state machine handling lo
 The test [`06-two-node-snapshot/the_test.go`](https://github.com/zvold/using-etcd-io-raft/blob/main/src/06-two-node-snapshot/the_test.go) is similar to the previous [05-two-node-cluster](05-two-node-cluster), except before creating the second node, it performs a log compaction on node 1. So that when node 2 joins the cluster, it has to recover the FSM state from the snapshot.
 
 Note that the `Snapshot` is not coming from a "committed" channel. When `Ready` struct contains a Snapshot, we apply it to both `MemoryStorage` and to the FSM.
+
+Next: [07-detour-change-fsm](07-detour-change-fsm).

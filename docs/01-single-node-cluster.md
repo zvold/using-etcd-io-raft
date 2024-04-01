@@ -8,6 +8,20 @@ The single-node cluster is expected to go through the following stages:
 - The node starts in the 'follower' state — the test verifies this before continuing.
 - It starts the voting process and wins the vote — the test verifies that the node reaches the 'leader' state.
 
+> {% octicon alert height:24 %} Note:
+> 
+> Step 1 of "the loop" mentions:
+> 
+> *Write Entries, HardState and Snapshot to *persistent* storage in order, i.e. Entries first, then HardState and Snapshot if they are not empty. If persistent storage supports atomic writes then all of them can be written together.*
+> 
+> However, `the_test.go` doesn't follow this and applies the `Snapshot` first:
+>``` go
+>n.storage.ApplySnapshot(rd.Snapshot)
+>n.storage.SetHardState(rd.HardState)
+>n.storage.Append(rd.Entries)
+>```
+>This is because the above quote refers to _persistent_ storage, addressing concerns of the node crashing after persisting the data partially and later restarting from that date. This doesn't apply to the `MemoryStorage` used in this test (and following ones). In fact, for `MemoryStorage` it's important to apply the `Snapshot` first. It will be more clear as to why from [07-detour-change-fsm](07-detour-change-fsm).
+
  The code can be run with:
  ```bash
  mkdir -p /tmp/01 && cd /tmp/01
