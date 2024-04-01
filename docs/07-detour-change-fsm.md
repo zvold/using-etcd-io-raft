@@ -29,4 +29,6 @@ n.storage.Append(rd.Entries)
 > ```
 >This seems to be caused by proposing a lot of entries at once (i.e. between ticks).
 >
->The error itself is well known (see [1](https://github.com/etcd-io/etcd/issues/13509), [2](https://github.com/etcd-io/etcd/issues/16220), [3](https://github.com/etcd-io/etcd/issues/13509)) and is addressed by [this](https://github.com/etcd-io/raft/pull/139) pull request (I verified that PR by using a patched `raft` library instead of `v3`). To work around the issue, until the pull request is merged, the test adds some delays when proposing new entries to reduce the number of new entries per tick. 
+>The error itself is well known (see [1](https://github.com/etcd-io/etcd/issues/13509), [2](https://github.com/etcd-io/etcd/issues/16220), [3](https://github.com/etcd-io/etcd/issues/13509)) and is addressed by [this](https://github.com/etcd-io/raft/pull/139) pull request (I verified that PR by using a patched `raft` library instead of `v3`). To work around the issue, until the pull request is merged, the test adds some delays when proposing new entries to reduce the number of new entries per tick.
+
+Next: [08-running-cluster](08-running-cluster).
