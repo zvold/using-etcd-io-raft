@@ -8,3 +8,5 @@ The test at [`08-running-cluster/the_test.go`](https://github.com/zvold/using-et
 - Lets it bake and verifies that all 3 nodes have the same FSM state at the end.
 
 It also simulates an unreliable network by sometimes dropping messages addressed to a random target node.
+
+Next: [09-async-storage-write](09-async-storage-write).
