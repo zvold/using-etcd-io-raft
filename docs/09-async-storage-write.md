@@ -13,3 +13,5 @@ Some changes that were necessary to make this work:
 > The test disables the simulation of failed message delivery (introduced in [08-running-cluster](08-running-cluster), because sometimes a message containing the `ConfChange` entry isn't delivered and the new node never joins the cluster.
 > 
 > To re-enable message delivery failures, the test would need to detect that a configuration change proposal was lost and retry.
+
+Next: [10-separate-process](10-separate-process).
