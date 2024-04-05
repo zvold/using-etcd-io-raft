@@ -26,3 +26,5 @@ The test in [`11-persistence-shutdown/the_test.go`](https://github.com/zvold/usi
 4. Issue some more commands to the remaining nodes, so they can advance the FSM.
 5. Restart node 3. It recovers the state from `.memory-3` file and re-joins the cluster.
 6. After a while, verify what all 3 nodes have the same FSM state — that is, node 3 has caught up with the other nodes.
+
+See [these instructions](index.md#running-the-code) on how to run both the test and the CLI program.

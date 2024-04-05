@@ -23,17 +23,6 @@ The single-node cluster is expected to go through the following stages:
 >```
 >This is because the above quote refers to _persistent_ storage, addressing concerns of the node crashing after persisting the data partially and later restarting from that date. This doesn't apply to the `MemoryStorage` used in this test (and following ones). In fact, for `MemoryStorage` it's important to apply the `Snapshot` first. It will be more clear as to why from [07-detour-change-fsm](07-detour-change-fsm).
 
- The code can be run with:
- ```bash
- mkdir -p /tmp/01 && cd /tmp/01
- go mod init tmp
- go get  -t github.com/zvold/using-etcd-io-raft/src/01-single-node-cluster@latest
- go test -v github.com/zvold/using-etcd-io-raft/src/01-single-node-cluster
- ```
- 
- Or, if this repository is cloned locally, directly from the `src` directory:
- ```bash
- go test -v ./01-single-node-cluster
- ```
+See [these instructions](index.md#running-the-code) on how to run the code.
 
 Next: [02-single-node-proposals](02-single-node-proposals).
