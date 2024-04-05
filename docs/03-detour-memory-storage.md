@@ -1,3 +1,4 @@
+## 03-detour-memory-storage
 We're using the [`raft.MemoryStorage`](https://github.com/etcd-io/raft/blob/83d8deca/storage.go#L96-L110) struct already ([01-single-node-cluster](01-single-node-cluster) and [02-single-node-proposals](02-single-node-proposals)), and are going to continue using it.
 
 So, let's take a closer look at the actual interface and implementation. We're also going to cover it with a few [test cases](https://github.com/zvold/using-etcd-io-raft/blob/main/src/03-detour-memory-storage/memorystorage_test.go) to be extra sure of the analysis.

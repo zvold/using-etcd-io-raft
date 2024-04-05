@@ -1,3 +1,4 @@
+## 02-single-node-proposals
 [Previous section](01-single-node-cluster) described how to start a single-node raft cluster. The next step is to send some proposals in this cluster and observe them arriving via the 'commit' channel on the sole node.
 
 In general, there are two kinds of log entries that can be proposed: "command" entries that are relevant for the application-specific FSM, and "configuration change" entries that are necessary in any raft cluster (for communicating things like nodes joining/leaving the cluster).

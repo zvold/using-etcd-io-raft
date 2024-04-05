@@ -1,3 +1,4 @@
+## 07-detour-change-fsm
 Up to this point, the FSM state was represented by a *full* list of "command" log entries (introduced in [02-single-node-proposals](02-single-node-proposals)).
 
 So first, we make the FSM more realistic, by introducing a state which is still mutated using the commands, but doesn't remember the *full* history. Each individual "command" entry still carries a single byte of data, but the FSM now simply adds committed commands to its state, an integer value.

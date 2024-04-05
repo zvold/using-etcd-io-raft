@@ -1,3 +1,4 @@
+## 10-separate-process
 This section describes a program which runs a single node of a raft cluster, and communicates with other instances of the same program via network. This is a relatively big change compared to the [09-async-storage-write](09-async-storage-write) example, so here's an overview of how the functionality is split between different files:
 ```
 10-separate-process/

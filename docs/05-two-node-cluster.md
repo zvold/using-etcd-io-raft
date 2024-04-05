@@ -1,3 +1,4 @@
+## 05-two-node-cluster
 This section builds on top of [04-detour-node-refactor](04-detour-node-refactor) to set up a two-node cluster, where a second node joins an existing single-node cluster and receives the full log from the leader. This, in turn, should set us up for implementing and testing log compaction later.
 
 The test at [`05-two-node-cluster/the_test.go`](https://github.com/zvold/using-etcd-io-raft/blob/main/src/05-two-node-cluster/the_test.go) :

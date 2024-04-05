@@ -1,3 +1,4 @@
+## 06-two-node-snapshot
 In this section, we let one node of the cluster receive the full FSM state from another node via a snapshot + remaining entries.
 
 This requires implementing the remaining steps of the "state machine handling loop":

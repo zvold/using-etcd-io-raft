@@ -1,3 +1,4 @@
+## 11-persistence-shutdown
 This section addresses some leftovers from the [previous](10-separate-process) one:
 - On shutdown, nodes write their `MemoryStorage` to a file, and remove themselves from the cluster, by sending a `ConfChange` proposal.
 - On startup, nodes recover the state from the file, if present.
