@@ -83,3 +83,5 @@ The [test](https://github.com/zvold/using-etcd-io-raft/blob/main/src/10-separate
 4. Start node 3, initialize `FsmState` with the node address, and send `ProposeConfChange` RPC to node 1 over the network.
    The program proposes a command `1 << 3` to node 3 locally.
 5. Verify that the FSM integer state on all 3 nodes is equal to 14 (the sum of all proposed commands, `0x1110`).
+
+Next: [11-persistence-shutdown](11-persistence-shutdown).

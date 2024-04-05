@@ -3,13 +3,13 @@ permalink: /
 ---
 > {% octicon alert height:24 %} Note:
 > 
-> Work in progress, current status: step 10 out of approx. 12 steps.
+> Work in progress, current status: step 11 out of approx. 12 steps.
 
 **What:** this is a series of blog posts about building a small program that uses the [`etcd-io/raft`](https://github.com/etcd-io/raft) Go library.
 
-**Why:** the README of `etcd-io/raft` links to a "simple example application", [raftexample](https://github.com/etcd-io/etcd/tree/main/contrib/raftexample), which I found too complex. For instance, it pulls dependencies from [`etcd-io/etcd`](https://github.com/etcd-io/etcd), which shouldn't be necessary for a minimal example. So, I'm attempting to build my own "simple example application", starting by following the ["usage"](https://github.com/etcd-io/raft#usage) section.
+**Why:** the README of `etcd-io/raft` links to a "simple example application", [raftexample](https://github.com/etcd-io/etcd/tree/main/contrib/raftexample), which I found too complex. For instance, it pulls dependencies from [`etcd-io/etcd`](https://github.com/etcd-io/etcd), which shouldn't be necessary for a minimal example. So, I'm attempting to build my own "simple example application", starting by following the ["usage"](https://github.com/etcd-io/raft#usage) section of the README.
 
-**How:** The first post describes a minimal program, running a single-node raft cluster. Then, after a sequence of incremental changes, we end up with a CLI program similar to `raftexample`: each instance runs one raft node, instances communicate over network, and together they maintain a replicated FSM.
+**How:** The first post describes a minimal program [`src/01-single-node-cluster`](https://github.com/zvold/using-etcd-io-raft/blob/main/src/01-single-node-cluster), running a single-node raft cluster. Then, after a sequence of incremental changes, we end up with a CLI program [`src/11-persistence-shutdown`](https://github.com/zvold/using-etcd-io-raft/blob/main/src/11-persistence-shutdown), similar to `raftexample`: each instance runs one raft node, instances communicate over network, and together they maintain a replicated FSM.
 
 ## Table of contents
 - [01-single-node-cluster](01-single-node-cluster) \
@@ -32,3 +32,5 @@ permalink: /
   Run a 3-node cluster similar to `08-running-cluster`, with snapshots, log compaction, and so on. However, the "state machine handling loop" is implemented using the "asynchronous storage writes" mechanism.
 - [10-separate-process](10-separate-process) \
   Introduce a CLI program which runs one node. Several instances of the program can form a cluster. The running instances deliver messages to each other over network via RPCs.
+- [11-persistence-shutdown](11-persistence-shutdown) \
+  On shutdown, nodes remove themselves from the cluster, and persist their `MemoryStorage` to disk. On startup, nodes check for persisted state on disk and recover from there, if available.
