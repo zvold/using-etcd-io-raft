@@ -1,9 +1,6 @@
 ---
 permalink: /
 ---
-> {% octicon alert height:24 %} Note:
-> 
-> Work in progress, current status: step 11 out of approx. 12 steps.
 
 **What:** this is a series of blog posts about building a small program that uses the [`etcd-io/raft`](https://github.com/etcd-io/raft) Go library.
 
